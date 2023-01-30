@@ -1,15 +1,43 @@
+<script setup lang="ts">
+import Collapse from "./components/VueCollapse.vue";
+import { ref } from "vue";
+
+const isCollapsed1 = ref(false);
+const display1 = ref("");
+
+const isCollapsed2 = ref(true);
+const display2 = ref("");
+
+const onInit1 = (state) => {
+  display1.value = "init 1 " + state;
+};
+const onEvent1 = (state) => {
+  display1.value = "event 1 " + state;
+};
+
+const onInit2 = (state) => {
+  display2.value = "init 2 " + state;
+};
+const onEvent2 = (state) => {
+  display2.value = "event 2 " + state;
+};
+
+const onExpanded = () => {
+  console.log("onExpanded");
+};
+</script>
+
 <template>
   <div class="app">
-    <button @click="toggle1 = !toggle1">{{ display1 }}</button>
+    <button @click="isCollapsed1 = !isCollapsed1">{{ display1 }}</button>
 
     <section class="section">
       <Collapse
-        :when="toggle1"
+        :when="isCollapsed1"
         @init="onInit1"
         @event="onEvent1"
         @expanded="onExpanded"
-        class="collapse"
-        as="section"
+        as="div"
         v-slot="{ state }"
       >
         <div class="spacer"></div>
@@ -28,15 +56,14 @@
       </Collapse>
     </section>
 
-    <button @click="toggle2 = !toggle2">{{ display2 }}</button>
+    <button @click="isCollapsed2 = !isCollapsed2">{{ display2 }}</button>
     <section class="section">
       <Collapse
-        :when="toggle2"
+        :when="isCollapsed2"
         @init="onInit2"
         @event="onEvent2"
         @expanded="onExpanded"
-        class="collapse"
-        as="section"
+        as="div"
         transition="400ms cubic-bezier(0, 1, 0, 1)"
         v-slot="{ state }"
       >
@@ -60,37 +87,6 @@
     </section>
   </div>
 </template>
-
-
-<script setup>
-import Collapse from './components/VueCollapse.vue'
-import { ref } from 'vue'
-
-const toggle1 = ref(false)
-const display1 = ref('')
-
-const toggle2 = ref(true)
-const display2 = ref('')
-
-const onInit1 = (payload) => {
-  display1.value = 'init 1 ' + payload
-}
-const onEvent1 = (payload) => {
-  display1.value = 'event 1 ' + payload
-}
-
-const onInit2 = (payload) => {
-  display2.value = 'init 2 ' + payload
-}
-const onEvent2 = (payload) => {
-  display2.value = 'event 2 ' + payload
-}
-
-const onExpanded = () => {
-  console.log('onExpanded')
-}
-</script>
-
 
 <style>
 *,
@@ -150,5 +146,10 @@ button {
 
 .spacer {
   padding-top: 1rem;
+}
+
+/* Custom easing */
+.vue-collapse[data-vue-collapse-transition] {
+  transition: grid-template-rows 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
