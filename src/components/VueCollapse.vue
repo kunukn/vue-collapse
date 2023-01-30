@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
     ref="root"
     :data-state="state"
     :data-is-collapsed="when ? '' : null"
-    data-vue-collapse-2023
+    data-vue-collapse-transition
     :style="{
       transition: props.transition
         ? eventPropertyName + ' ' + props.transition

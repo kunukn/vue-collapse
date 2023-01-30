@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import './development.css'
 import './assets/vue-collapse-2023.css'
-import App from './App.vue'
+import './development.css'
+import Demo from './Demo.vue'
 
-let app = createApp(App)
+let app = createApp(Demo)
 app.mount('#app')
