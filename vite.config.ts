@@ -8,10 +8,10 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: resolve(__dirname, 'src/lib/main.ts'),
       name: 'VueCollapse',
       // the proper extensions will be added
-      fileName: 'my-lib',
+      fileName: 'vue-collapse',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
