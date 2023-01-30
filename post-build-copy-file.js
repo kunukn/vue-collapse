@@ -5,8 +5,8 @@ function callback() {
 }
 
 fs.copyFile(
-  './assets/vue-collapse-2023.css',
-  './dist/vue-collapse-2023.css',
+  './assets/vue-collapse.css',
+  './dist/vue-collapse.css',
   fs.constants.COPYFILE_EXCL,
   callback
 )

@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   build: {
+    
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/lib/main.ts'),
@@ -22,6 +23,10 @@ export default defineConfig({
         // for externalized deps
         globals: {
           vue: 'Vue',
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'vue-collapse.css';
+          return assetInfo.name;
         },
       },
     },

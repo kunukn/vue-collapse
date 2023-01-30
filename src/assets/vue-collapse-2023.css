@@ -2,16 +2,16 @@
   transition: grid-template-rows 290ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.vue-collapse-2023 {
+.vue-collapse {
   display: grid;
   grid-template-rows: 1fr;
   overflow: hidden;
 }
 
-.vue-collapse-2023-content {
+.vue-collapse-content {
   min-height: 0;
 }
 
-.vue-collapse-2023[data-is-collapsed] {
+.vue-collapse[data-is-collapsed] {
   grid-template-rows: 0fr;
 }

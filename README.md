@@ -7,5 +7,5 @@ Collapsible component with CSS transition for elements with variable and dynamic
 :warning: ️You need to add the CSS file. ``
 
 ```html
-<link rel="stylesheet" href="<path-to>/vue-collapse-2023.css">
+<link rel="stylesheet" href="<path-to>/dist/vue-collapse.css">
 ```

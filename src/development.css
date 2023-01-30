@@ -1,3 +1,3 @@
-.vue-collapse-2023[data-vue-collapse-transition] {
+.vue-collapse[data-vue-collapse-transition] {
   transition: grid-template-rows 200ms;
 }

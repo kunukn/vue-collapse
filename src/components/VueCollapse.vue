@@ -80,7 +80,7 @@ onBeforeUnmount(() => {
 <template>
   <component
     :is="as"
-    class="vue-collapse-2023"
+    class="vue-collapse"
     ref="root"
     :data-state="state"
     :data-is-collapsed="when ? '' : null"
@@ -91,8 +91,30 @@ onBeforeUnmount(() => {
         : null,
     }"
   >
-    <div class="vue-collapse-2023-content">
+    <div class="vue-collapse-content">
       <slot :state="state" />
     </div>
   </component>
 </template>
+
+<style>
+[data-vue-collapse-transition] {
+  transition: grid-template-rows 290ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
+
+<style scoped>
+.vue-collapse {
+  display: grid;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+.vue-collapse-content {
+  min-height: 0;
+}
+
+.vue-collapse[data-is-collapsed] {
+  grid-template-rows: 0fr;
+}
+</style>
