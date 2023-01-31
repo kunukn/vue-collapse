@@ -28,7 +28,10 @@ import "@kunukn/vue-collapse/dist/vue-collapse.css"
 or CDN
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.css"
+/>
 ```
 
 ## Supported versions
