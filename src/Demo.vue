@@ -1,41 +1,42 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from "vue";
 import Collapse from "./components/VueCollapse.vue";
-import { ref } from "vue";
 
-const isCollapsed1 = ref(false);
-const display1 = ref("");
-
-const isCollapsed2 = ref(true);
-const display2 = ref("");
-
-const onInit1 = (state) => {
-  display1.value = "init 1 " + state;
-};
-const onEvent1 = (state) => {
-  display1.value = "event 1 " + state;
-};
-
-const onInit2 = (state) => {
-  display2.value = "init 2 " + state;
-};
-const onEvent2 = (state) => {
-  display2.value = "event 2 " + state;
-};
-
-const onExpanded = () => {
-  console.log("onExpanded");
-};
+export default defineComponent({
+  components: {
+    Collapse,
+  },
+  data() {
+    return {
+      isCollapsed1: false,
+      isCollapsed2: true,
+      isCollapsed3: true,
+      isCollapsed4: true,
+      display1: "",
+      display2: "",
+      display3: "",
+      display4: "",
+    };
+  },
+  methods: {
+    onExpanded() {
+      console.log("onExpanded");
+    },
+  },
+});
 </script>
 
 <template>
   <div class="app">
-    <button class="toggle" @click="isCollapsed1 = !isCollapsed1">{{ display1 }}</button>
+    <button class="toggle" @click="isCollapsed1 = !isCollapsed1">
+      {{ display1 }}
+    </button>
 
     <section class="section">
       <Collapse
         :when="isCollapsed1"
-        @init="onInit1"
-        @event="onEvent1"
+        @init="(state) => (display1 = 'init ' + state)"
+        @event="(state) => (display1 = 'event ' + state)"
         @expanded="onExpanded"
         as="div"
         v-slot="{ state }"
@@ -57,12 +58,14 @@ const onExpanded = () => {
       </Collapse>
     </section>
 
-    <button class="toggle" @click="isCollapsed2 = !isCollapsed2">{{ display2 }}</button>
+    <button class="toggle" @click="isCollapsed2 = !isCollapsed2">
+      {{ display2 }}
+    </button>
     <section class="section">
       <Collapse
         :when="isCollapsed2"
-        @init="onInit2"
-        @event="onEvent2"
+        @init="(state) => (display2 = 'init ' + state)"
+        @event="(state) => (display2 = 'event ' + state)"
         @expanded="onExpanded"
         as="div"
         transition="400ms cubic-bezier(0, 1, 0, 1)"
@@ -82,6 +85,62 @@ const onExpanded = () => {
           This book is a treatise on the theory of ethics, very popular during
           the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
           amet..", comes from a line in section 1.10.32.
+        </p>
+        <button>dummy button</button>
+        <div class="spacer"></div>
+      </Collapse>
+    </section>
+
+     <button class="toggle" @click="isCollapsed3 = !isCollapsed3">
+      {{ display3 }}
+    </button>
+
+    <section class="section">
+      <Collapse
+        :when="isCollapsed3"
+        @init="(state) => (display3 = 'init ' + state)"
+        @event="(state) => (display3 = 'event ' + state)"
+        @expanded="onExpanded"
+      >
+        <div class="spacer"></div>
+        <p class="long-text">
+          Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley
+          of type and scrambled it to make a type specimen book. It has survived
+          not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in
+          the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like
+          Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <button>dummy button</button>
+        <div class="spacer"></div>
+      </Collapse>
+    </section>
+
+       <button class="toggle" @click="isCollapsed4 = !isCollapsed4">
+      {{ display4 }}
+    </button>
+
+    <section class="section">
+      <Collapse
+        :when="isCollapsed4"
+        @init="(state) => (display4 = 'init ' + state)"
+        @event="(state) => (display4 = 'event ' + state)"
+        @expanded="onExpanded"
+      >
+        <div class="spacer"></div>
+        <p class="long-text">
+          Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley
+          of type and scrambled it to make a type specimen book. It has survived
+          not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in
+          the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like
+          Aldus PageMaker including versions of Lorem Ipsum.
         </p>
         <button>dummy button</button>
         <div class="spacer"></div>
