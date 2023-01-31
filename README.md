@@ -11,17 +11,24 @@ vue-collapse
 
 # Tiny library
 
-```
-vue-collapse.css  0.30 kB │ gzip: 0.18 kB
-vue-collapse.umd.cjs  1.69 kB │ gzip: 0.86 kB
-```
+| name                 | size    | gzip    |
+| -------------------- | ------- | ------- |
+| vue-collapse.css     | 0.37 kB | 0.20 kB |
+| vue-collapse.js      | 2.06 kB | 0.90 kB |
+| vue-collapse.umd.cjs | 1.69 kB | 0.86 kB |
 
 # CSS required
 
 :warning: ️You need to add the CSS file.
 
+```vue
+import "@kunukn/vue-collapse/dist/vue-collapse.css"
+```
+
+or CDN
+
 ```html
-<link rel="stylesheet" href="<path-to>/dist/vue-collapse.css" />
+<link rel="stylesheet" href="https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.css" />
 ```
 
 ## Supported versions
@@ -64,8 +71,8 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
         v-slot="{ state }"
       >
         <p class="long-text" :data-state="state">
-          {{ state }} - Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
+          I know the state: {{ state }}. Lorem Ipsum is simply dummy text of the
+          printing and typesetting industry.
         </p>
       </Collapse>
     </section>

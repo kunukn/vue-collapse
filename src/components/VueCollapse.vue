@@ -42,7 +42,7 @@ const emit = defineEmits([
   "collapsing",
   "expanded",
   "collapsed",
-]);
+] as emitEvents[]);
 
 const onStart = (event) => {
   if (event.propertyName === eventPropertyName) {
@@ -116,5 +116,9 @@ onBeforeUnmount(() => {
 
 .vue-collapse[data-is-collapsed] {
   grid-template-rows: 0fr;
+}
+
+.vue-collapse[data-state="collapsed"] {
+  visibility: hidden; /* inert */
 }
 </style>

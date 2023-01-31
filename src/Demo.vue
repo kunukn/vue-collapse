@@ -29,7 +29,7 @@ const onExpanded = () => {
 
 <template>
   <div class="app">
-    <button @click="isCollapsed1 = !isCollapsed1">{{ display1 }}</button>
+    <button class="toggle" @click="isCollapsed1 = !isCollapsed1">{{ display1 }}</button>
 
     <section class="section">
       <Collapse
@@ -52,11 +52,12 @@ const onExpanded = () => {
           passages, and more recently with desktop publishing software like
           Aldus PageMaker including versions of Lorem Ipsum.
         </p>
+        <button>dummy button</button>
         <div class="spacer"></div>
       </Collapse>
     </section>
 
-    <button @click="isCollapsed2 = !isCollapsed2">{{ display2 }}</button>
+    <button class="toggle" @click="isCollapsed2 = !isCollapsed2">{{ display2 }}</button>
     <section class="section">
       <Collapse
         :when="isCollapsed2"
@@ -82,6 +83,7 @@ const onExpanded = () => {
           the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
           amet..", comes from a line in section 1.10.32.
         </p>
+        <button>dummy button</button>
         <div class="spacer"></div>
       </Collapse>
     </section>
@@ -121,7 +123,7 @@ body {
   margin-inline: auto;
 }
 
-button {
+.toggle {
   border: 2px solid;
   padding: 0.5rem 1rem;
   min-width: 12rem;
