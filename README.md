@@ -9,6 +9,21 @@ Collapsible component with CSS transition for elements with variable and dynamic
 
 vue-collapse
 
+![logo](logo/collapsible.svg "logo")
+
+# Demo
+
+<table style="border-spacing: 16px;border-collapse: separate;">
+
+<tr>
+<td>Codesandbox simple Vue 3</td>
+<td><img width="24" height="24" src="ui-library-logo/Vue-logo.svg"/></td>
+<td><a href="https://s128s4.csb.app" target="_blank">View</a></td>
+<td><a href="https://codesandbox.io/s/kunukn-vue-collapse-s128s4" target="_blank" >Edit</a></td>
+</tr>
+
+</table>
+
 # Tiny library
 
 | name                 | size    | gzip    |
@@ -68,19 +83,6 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
 | @init(state)  | function |         | component mount event emitted with current state |
 
 <br>
-
-## Demo
-
-<table style="border-spacing: 16px;border-collapse: separate;">
-
-<tr>
-<td>Codesandbox simple Vue 3</td>
-<td><img width="24" height="24" src="ui-library-logo/Vue-logo.svg"/></td>
-<td><a href="https://s128s4.csb.app" target="_blank">View</a></td>
-<td><a href="https://codesandbox.io/s/kunukn-vue-collapse-s128s4" target="_blank" >Edit</a></td>
-</tr>
-
-</table>
 
 ## Usage example
 
