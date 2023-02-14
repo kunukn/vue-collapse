@@ -14,8 +14,8 @@ vue-collapse
 | name                 | size    | gzip    |
 | -------------------- | ------- | ------- |
 | vue-collapse.css     | 0.37 kB | 0.20 kB |
-| vue-collapse.js      | 2.06 kB | 0.90 kB |
-| vue-collapse.umd.cjs | 1.69 kB | 0.86 kB |
+| vue-collapse.js      | 2.11 kB | 0.91 kB |
+| vue-collapse.umd.cjs | 1.72 kB | 0.88 kB |
 
 # CSS required
 
@@ -38,23 +38,49 @@ or CDN
 
 Vue 3
 
+## Install
+
+```bash
+npm install @kunukn/vue-collapse
+```
+
+## Import
+
+```js
+import "@kunukn/vue-collapse/dist/vue-collapse.css";
+import { VueCollapse } from "@kunukn/vue-collapse";
+```
+
 ## Attribute options
 
 There are four possible states: `collapsed`, `collapsing`, `expanded`, `expanding`.
 
-| Attribute       | Type     | Default | About                                            |
-| --------------- | -------- | ------- | ------------------------------------------------ |
-| :when           | boolean  | falsy   | should component collapse?                       |
-| :transition     | string   | falsy   | apply custom CSS transition                      |
-| :as             | string   | div     | element type to render                           |
-| @onCollapse()   | function |         | event emitted with component in this state       |
-| @onCollapsing() | function |         | event emitted with component in this state       |
-| @onExpanded()   | function |         | event emitted with component in this state       |
-| @onExpanding()  | function |         | event emitted with component in this state       |
-| @onEvent(state) | function |         | event emitted with one of the 4 states           |
-| @onInit(state)  | function |         | component mount event emitted with current state |
+| Attribute     | Type     | Default | About                                            |
+| ------------- | -------- | ------- | ------------------------------------------------ |
+| :when         | boolean  | falsy   | should component collapse?                       |
+| :transition   | string   | falsy   | apply custom CSS transition                      |
+| :as           | string   | div     | element type to render                           |
+| @collapse()   | function |         | event emitted with component in this state       |
+| @collapsing() | function |         | event emitted with component in this state       |
+| @expanded()   | function |         | event emitted with component in this state       |
+| @expanding()  | function |         | event emitted with component in this state       |
+| @event(state) | function |         | event emitted with one of the 4 states           |
+| @init(state)  | function |         | component mount event emitted with current state |
 
 <br>
+
+## Demo
+
+<table style="border-spacing: 16px;border-collapse: separate;">
+
+<tr>
+<td>Codesandbox simple Vue 3</td>
+<td><img width="24" height="24" src="ui-library-logo/Vue-logo.svg"/></td>
+<td><a href="https://s128s4.csb.app" target="_blank">View</a></td>
+<td><a href="https://codesandbox.io/s/kunukn-vue-collapse-s128s4" target="_blank" >Edit</a></td>
+</tr>
+
+</table>
 
 ## Usage example
 
@@ -66,14 +92,8 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
     <button @click="isCollapsed = !isCollapsed">{{ display }}</button>
 
     <section class="section">
-      <Collapse
-        :when="isCollapsed"
-        @init="onInit"
-        @event="onEvent"
-        @expanded="onExpanded"
-        v-slot="{ state }"
-      >
-        <p class="long-text" :data-state="state">
+      <Collapse :when="isCollapsed" @event="onEvent" v-slot="{ state }">
+        <p class="long-text">
           I know the state: {{ state }}. Lorem Ipsum is simply dummy text of the
           printing and typesetting industry.
         </p>
@@ -89,16 +109,8 @@ import { ref } from "vue";
 const isCollapsed = ref(false);
 const display = ref("");
 
-const onInit = (state) => {
-  display.value = "init " + state;
-};
-
 const onEvent = (state) => {
   display.value = "event " + state;
-};
-
-const onExpanded = () => {
-  console.log("onExpanded");
 };
 </script>
 
@@ -120,11 +132,11 @@ Modern browsers
 
 # Design goals
 
-- let the browser handle the animation using CSS height transition
-- minimal in file size
-- minimalistic API
-- flexible - provide your own markup, styling and easing
-- interruptible - can be reversed during movement
-- inert - when collapsed you should tab over the collapsed component
-- availability - from CDN or npm install
-- collapsible on height only
+- Minimal in file size
+- Let the browser handle the animation using CSS transition
+- Minimalistic API
+- Flexible - provide your own markup, styling and easing
+- Interruptible - can be reversed during movement
+- Inert - when collapsed you should tab over the collapsed component
+- Availability - from CDN or npm install
+- Collapsible on height only
