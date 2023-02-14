@@ -130,7 +130,7 @@ https://unpkg.com/@kunukn/vue-collapse/
 
 # Supported browsers
 
-Modern browsers
+Modern browsers that can CSS transition on `grid-template-rows`.
 
 # Design goals
 
