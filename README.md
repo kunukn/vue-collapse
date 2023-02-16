@@ -9,7 +9,7 @@ Collapsible component with CSS transition for elements with variable and dynamic
 
 vue-collapse
 
-![logo](logo/collapsible.svg "logo")
+![logo](logo/collapsible.svg 'logo')
 
 # Demo
 
@@ -62,8 +62,8 @@ npm install @kunukn/vue-collapse
 ## Import
 
 ```js
-import "@kunukn/vue-collapse/dist/vue-collapse.css";
-import { VueCollapse } from "@kunukn/vue-collapse";
+import '@kunukn/vue-collapse/dist/vue-collapse.css'
+import { VueCollapse } from '@kunukn/vue-collapse'
 ```
 
 ## Attribute options
@@ -91,29 +91,38 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
 ```vue
 <template>
   <div class="app">
-    <button @click="isCollapsed = !isCollapsed">{{ display }}</button>
+    <button
+      @click="isCollapsed = !isCollapsed"
+      :aria-expanded="!isCollapsed"
+      aria-controls="lorem-ipsum-description"
+    >
+      {{ display }}
+    </button>
 
-    <section class="section">
-      <Collapse :when="isCollapsed" @event="onEvent" v-slot="{ state }">
-        <p class="long-text">
-          I know the state: {{ state }}. Lorem Ipsum is simply dummy text of the
-          printing and typesetting industry.
-        </p>
-      </Collapse>
-    </section>
+    <Collapse
+      id="lorem-ipsum-description"
+      :when="isCollapsed"
+      @event="onEvent"
+      v-slot="{ state }"
+    >
+      <p class="long-text">
+        I know the state: {{ state }}. Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry.
+      </p>
+    </Collapse>
   </div>
 </template>
 
 <script setup>
-import { VueCollapse as Collapse } from "@kunukn/vue-collapse";
-import { ref } from "vue";
+import { VueCollapse as Collapse } from '@kunukn/vue-collapse'
+import { ref } from 'vue'
 
-const isCollapsed = ref(false);
-const display = ref("");
+const isCollapsed = ref(false)
+const display = ref('')
 
 const onEvent = (state) => {
-  display.value = "event " + state;
-};
+  display.value = 'event ' + state
+}
 </script>
 
 <style>
