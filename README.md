@@ -153,6 +153,9 @@ Modern browsers that can CSS transition on `grid-template-rows`.
 
 # Design goals
 
+<details>
+  <summary>Click: to see design goals</summary>
+
 - Minimal in file size
 - Let the browser handle the animation using CSS transition
 - Minimalistic API
@@ -161,3 +164,5 @@ Modern browsers that can CSS transition on `grid-template-rows`.
 - Inert - when collapsed you should tab over the collapsed component
 - Availability - from CDN or npm install
 - Collapsible on height only
+
+</details>
