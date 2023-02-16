@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import './assets/ress.min.css'
 import './development.css'
-import Demo from './Demo.vue'
+import DemoApp from './DemoApp.vue'
 
-let app = createApp(Demo)
+const app = createApp(DemoApp)
 app.mount('#app')

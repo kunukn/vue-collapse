@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const props = defineProps({
   when: {
@@ -8,73 +8,73 @@ const props = defineProps({
   },
   as: {
     type: String,
-    default: "div",
+    default: 'div',
   },
   transition: {
     type: String,
   },
-});
+})
 
-const root = ref(null);
-const state = ref("");
+const root = ref(null)
+const state = ref('')
 
-const eventPropertyName = "grid-template-rows";
+const eventPropertyName = 'grid-template-rows'
 
-const expanding = "expanding";
-const collapsing = "collapsing";
-const expanded = "expanded";
-const collapsed = "collapsed";
-const transitionstart = "transitionstart";
-const transitionend = "transitionend";
+const expanding = 'expanding'
+const collapsing = 'collapsing'
+const expanded = 'expanded'
+const collapsed = 'collapsed'
+const transitionstart = 'transitionstart'
+const transitionend = 'transitionend'
 
 type emitEvents =
-  | "init"
-  | "event"
-  | "expanding"
-  | "collapsing"
-  | "expanded"
-  | "collapsed";
+  | 'init'
+  | 'event'
+  | 'expanding'
+  | 'collapsing'
+  | 'expanded'
+  | 'collapsed'
 
 const emit = defineEmits([
-  "init",
-  "event",
-  "expanding",
-  "collapsing",
-  "expanded",
-  "collapsed",
-] as emitEvents[]);
+  'init',
+  'event',
+  'expanding',
+  'collapsing',
+  'expanded',
+  'collapsed',
+] as emitEvents[])
 
 const onStart = (event) => {
   if (event.propertyName === eventPropertyName) {
-    let value: emitEvents = props.when ? collapsing : expanding;
-    state.value = value;
-    emit("event", value);
-    emit(value);
+    let value: emitEvents = props.when ? collapsing : expanding
+    state.value = value
+    emit('event', value)
+    emit(value)
   }
-};
+}
 
 const onEnd = (event) => {
   if (event.propertyName === eventPropertyName) {
-    let value: emitEvents = props.when ? collapsed : expanded;
-    state.value = value;
-    emit("event", value);
-    emit(value);
+    let value: emitEvents = props.when ? collapsed : expanded
+    state.value = value
+    emit('event', value)
+    emit(value)
   }
-};
+}
 
 onMounted(() => {
-  let value = props.when ? collapsed : expanded;
-  state.value = value;
-  emit("init", value);
+  let value = props.when ? collapsed : expanded
+  state.value = value
+  emit('init', value)
 
-  root.value.addEventListener(transitionstart, onStart);
-  root.value.addEventListener(transitionend, onEnd);
-});
+  root.value.addEventListener(transitionstart, onStart)
+  root.value.addEventListener(transitionend, onEnd)
+})
 
 onBeforeUnmount(() => {
-  root.value.removeEventListener(transitionstart, onStart);
-  root.value.removeEventListener(transitionend, onEnd);
-});
+  root.value.removeEventListener(transitionstart, onStart)
+  root.value.removeEventListener(transitionend, onEnd)
+})
 </script>
 
 <template>
@@ -119,7 +119,7 @@ onBeforeUnmount(() => {
   grid-template-rows: 0fr;
 }
 
-.vue-collapse[data-state="collapsed"] {
+.vue-collapse[data-state='collapsed'] {
   visibility: hidden; /* inert */
 }
 </style>

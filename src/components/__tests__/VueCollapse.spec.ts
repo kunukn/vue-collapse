@@ -1,16 +1,16 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from 'vitest'
 
-import { mount } from "@vue/test-utils";
-import VueCollapse from "../VueCollapse.vue";
+import { mount } from '@vue/test-utils'
+import VueCollapse from '../VueCollapse.vue'
 
-describe("VueCollapse", () => {
-  it("renders properly", () => {
+describe('VueCollapse', () => {
+  it('renders properly', () => {
     const wrapper = mount(VueCollapse, {
       props: { when: false },
       slots: {
-        default: "Main Content",
+        default: 'Main Content',
       },
-    });
-    expect(wrapper.text()).toContain("Main Content");
-  });
-});
+    })
+    expect(wrapper.text()).toContain('Main Content')
+  })
+})

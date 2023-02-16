@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import Collapse from "./components/VueCollapse.vue";
+import { defineComponent } from 'vue'
+import Collapse from './components/VueCollapse.vue'
 
 export default defineComponent({
   components: {
@@ -12,18 +12,18 @@ export default defineComponent({
       isCollapsed2: true,
       isCollapsed3: true,
       isCollapsed4: true,
-      display1: "",
-      display2: "",
-      display3: "",
-      display4: "",
-    };
+      display1: '',
+      display2: '',
+      display3: '',
+      display4: '',
+    }
   },
   methods: {
     onExpanded() {
-      console.log("onExpanded");
+      console.log('onExpanded')
     },
   },
-});
+})
 </script>
 
 <template>
@@ -91,7 +91,7 @@ export default defineComponent({
       </Collapse>
     </section>
 
-     <button class="toggle" @click="isCollapsed3 = !isCollapsed3">
+    <button class="toggle" @click="isCollapsed3 = !isCollapsed3">
       {{ display3 }}
     </button>
 
@@ -104,22 +104,22 @@ export default defineComponent({
       >
         <div class="spacer"></div>
         <p class="long-text">
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. It has survived
-          not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in
-          the 1960s with the release of Letraset sheets containing Lorem Ipsum
-          passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum.
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
         </p>
         <button>dummy button</button>
         <div class="spacer"></div>
       </Collapse>
     </section>
 
-       <button class="toggle" @click="isCollapsed4 = !isCollapsed4">
+    <button class="toggle" @click="isCollapsed4 = !isCollapsed4">
       {{ display4 }}
     </button>
 
@@ -132,15 +132,15 @@ export default defineComponent({
       >
         <div class="spacer"></div>
         <p class="long-text">
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. It has survived
-          not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in
-          the 1960s with the release of Letraset sheets containing Lorem Ipsum
-          passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum.
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
         </p>
         <button>dummy button</button>
         <div class="spacer"></div>
