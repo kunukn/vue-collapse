@@ -70,6 +70,9 @@ import { VueCollapse } from '@kunukn/vue-collapse'
 
 There are four possible states: `collapsed`, `collapsing`, `expanded`, `expanding`.
 
+<details>
+  <summary>Click: to see the attributes</summary>
+
 | Attribute     | Type     | Default | About                                            |
 | ------------- | -------- | ------- | ------------------------------------------------ |
 | :when         | boolean  | falsy   | should component collapse?                       |
@@ -82,11 +85,14 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
 | @event(state) | function |         | event emitted with one of the 4 states           |
 | @init(state)  | function |         | component mount event emitted with current state |
 
+</details>
+
 <br>
 
-## Usage example
+## Usage examples
 
-### Simple
+<details>
+  <summary>Click: Simple version using ARIA</summary>
 
 ```vue
 <template>
@@ -132,6 +138,10 @@ const onEvent = (state) => {
 }
 </style>
 ```
+
+</details>
+<br>
+<br>
 
 # CDN
 
