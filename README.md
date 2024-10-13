@@ -51,7 +51,7 @@ or CDN
 
 or manually copy the content from the `vue-collapse.css` file to your app.
 
-To alter the timing, you can use the `transition` prop. or add a custom CSS.
+To alter the timing, you can use the `transition` prop. Or add custom CSS.
 
 ```HTML
 <style>
