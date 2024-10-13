@@ -1,8 +1,9 @@
-import { fileURLToPath, URL } from 'node:url'
-import { resolve } from 'path'
+import { URL, fileURLToPath } from 'node:url'
+
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
+import { resolve } from 'path'
+import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -23,7 +24,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue'],
+      external: ['vue', new RegExp('/__tests__/.*'), '*.spec.ts'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
@@ -31,8 +32,16 @@ export default defineConfig({
           vue: 'Vue',
         },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css') return 'vue-collapse.css'
-          return assetInfo.name
+          const renamed: string[] = []
+
+          if(!assetInfo.names) return ''
+
+          assetInfo.names.forEach((name) => {
+            if (name === 'style.css') renamed.push('vue-collapse.css')
+            else  renamed.push(name)
+          })
+
+          return renamed.join('/')
         },
       },
     },
