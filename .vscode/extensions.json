@@ -1,3 +1,15 @@
 {
-  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "christian-kohler.npm-intellisense",
+    "pflannery.vscode-versionlens",
+    "esbenp.prettier-vscode",
+    "sibiraj-s.vscode-scss-formatter",
+    "jock.svg",
+    "amatiasq.sort-imports",
+    "usernamehw.errorlens",
+    "codescene.codescene-vscode",
+    "vue.volar"
+  ]
 }

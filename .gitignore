@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 coverage/
+
+.my-readme.txt
+.my-notes.txt
+.my-todo.txt
