@@ -108,13 +108,13 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
     <button
       @click="isCollapsed = !isCollapsed"
       :aria-expanded="!isCollapsed"
-      aria-controls="lorem-ipsum-description"
+      aria-controls="my-description"
     >
       {{ display }}
     </button>
 
     <VueCollapse
-      id="lorem-ipsum-description"
+      id="my-description"
       :when="isCollapsed"
       @event="onEvent"
       v-slot="{ state }"
