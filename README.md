@@ -36,8 +36,8 @@ vue-collapse
 
 :warning: ️You need to add the CSS file.
 
-```vue
-import "@kunukn/vue-collapse/dist/vue-collapse.css"
+```js
+import '@kunukn/vue-collapse/style' // this imports the vue-collapse.css file.
 ```
 
 or CDN
@@ -47,6 +47,14 @@ or CDN
   rel="stylesheet"
   href="https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.css"
 />
+```
+
+or manually add this CSS.
+
+```CSS
+.vue-collapse[data-vue-collapse-transition] {
+  transition: grid-template-rows 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 ```
 
 ## Supported versions
@@ -62,7 +70,7 @@ npm install @kunukn/vue-collapse
 ## Import
 
 ```js
-import '@kunukn/vue-collapse/dist/vue-collapse.css'
+import '@kunukn/vue-collapse/style'
 import { VueCollapse } from '@kunukn/vue-collapse'
 ```
 
@@ -105,7 +113,7 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
       {{ display }}
     </button>
 
-    <Collapse
+    <VueCollapse
       id="lorem-ipsum-description"
       :when="isCollapsed"
       @event="onEvent"
@@ -115,12 +123,12 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
         I know the state: {{ state }}. Lorem Ipsum is simply dummy text of the
         printing and typesetting industry.
       </p>
-    </Collapse>
+    </VueCollapse>
   </div>
 </template>
 
 <script setup>
-import { VueCollapse as Collapse } from '@kunukn/vue-collapse'
+import { VueCollapse } from '@kunukn/vue-collapse'
 import { ref } from 'vue'
 
 const isCollapsed = ref(false)
