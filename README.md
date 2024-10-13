@@ -49,12 +49,17 @@ or CDN
 />
 ```
 
-or manually add this CSS.
+or manually copy the content from the `vue-collapse.css` file to your app.
 
-```CSS
-.vue-collapse[data-vue-collapse-transition] {
-  transition: grid-template-rows 250ms cubic-bezier(0.4, 0, 0.2, 1);
+To alter the timing, you can use the `transition` prop. or add a custom CSS.
+
+```HTML
+<style>
+[data-vue-collapse-transition] {
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+</style>
 ```
 
 ## Supported versions
@@ -81,17 +86,17 @@ There are four possible states: `collapsed`, `collapsing`, `expanded`, `expandin
 <details>
   <summary>Click: to see the attributes</summary>
 
-| Attribute     | Type     | Default | About                                            |
-| ------------- | -------- | ------- | ------------------------------------------------ |
-| :when         | boolean  | falsy   | should component collapse?                       |
-| :transition   | string   | falsy   | apply custom CSS transition                      |
-| :as           | string   | div     | element type to render                           |
-| @collapse()   | function |         | event emitted with component in this state       |
-| @collapsing() | function |         | event emitted with component in this state       |
-| @expanded()   | function |         | event emitted with component in this state       |
-| @expanding()  | function |         | event emitted with component in this state       |
-| @event(state) | function |         | event emitted with one of the 4 states           |
-| @init(state)  | function |         | component mount event emitted with current state |
+| Attribute     | Type     | Default | About                                               |
+| ------------- | -------- | ------- | --------------------------------------------------- |
+| :when         | boolean  | falsy   | should component collapse?                          |
+| :as           | string   | div     | element type to render                              |
+| transition    | string   | falsy   | apply custom CSS transition, see demo example below |
+| @collapse()   | function |         | event emitted with component in this state          |
+| @collapsing() | function |         | event emitted with component in this state          |
+| @expanded()   | function |         | event emitted with component in this state          |
+| @expanding()  | function |         | event emitted with component in this state          |
+| @event(state) | function |         | event emitted with one of the 4 states              |
+| @init(state)  | function |         | component mount event emitted with current state    |
 
 </details>
 
@@ -142,7 +147,8 @@ const onEvent = (state) => {
 <style>
 /* Custom easing */
 .vue-collapse[data-vue-collapse-transition] {
-  transition: grid-template-rows 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
 ```
