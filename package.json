@@ -41,7 +41,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "test": "vitest --environment jsdom --root src/",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "generate:types": "vue-tsc --declaration --emitDeclarationOnly --outdir ./dist"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.4",
