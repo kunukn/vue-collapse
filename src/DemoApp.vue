@@ -212,15 +212,16 @@ body {
 
 .tooltip {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: calc(100% - 8px);
+  left: 0;
   display: none;
   min-width: 100px;
   min-height: 100px;
   border: 1px solid;
   pointer-events: none;
-  background-color: red;
-  z-index: 1;
+  background-color: ghostwhite;
+  z-index: 2;
+  padding: 4px;
 }
 
 .tooltip-hover:hover ~ .tooltip {
