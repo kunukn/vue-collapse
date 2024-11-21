@@ -53,7 +53,8 @@ export default defineComponent({
           passages, and more recently with desktop publishing software like
           Aldus PageMaker including versions of Lorem Ipsum.
         </p>
-        <button>dummy button</button>
+        <button class="tooltip-hover">dummy button</button>
+        <p class="tooltip">tool tip</p>
         <div class="spacer"></div>
       </Collapse>
     </section>
@@ -207,6 +208,24 @@ body {
 
 .spacer {
   padding-top: 1rem;
+}
+
+.tooltip {
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 0;
+  display: none;
+  min-width: 100px;
+  min-height: 100px;
+  border: 1px solid;
+  pointer-events: none;
+  background-color: ghostwhite;
+  z-index: 2;
+  padding: 4px;
+}
+
+.tooltip-hover:hover ~ .tooltip {
+  display: block;
 }
 
 /* Custom easing */

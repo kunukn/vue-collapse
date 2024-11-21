@@ -28,9 +28,9 @@ vue-collapse
 
 | name                 | size    | gzip    |
 | -------------------- | ------- | ------- |
-| vue-collapse.css     | 0.37 kB | 0.20 kB |
+| vue-collapse.css     | 0.43 kB | 0.21 kB |
 | vue-collapse.js      | 2.11 kB | 0.91 kB |
-| vue-collapse.umd.cjs | 1.72 kB | 0.88 kB |
+| vue-collapse.umd.cjs | 1.71 kB | 0.86 kB |
 
 # CSS required
 

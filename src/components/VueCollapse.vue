@@ -108,7 +108,14 @@ onBeforeUnmount(() => {
 .vue-collapse {
   display: grid;
   grid-template-rows: 1fr;
-  overflow: hidden;
+}
+
+.vue-collapse:not([data-state='expanded']) {
+  overflow-y: hidden;
+}
+
+.vue-collapse[data-state='collapsed'] {
+  visibility: hidden; /* inert */
 }
 
 .vue-collapse-content {
@@ -117,9 +124,5 @@ onBeforeUnmount(() => {
 
 .vue-collapse[data-is-collapsed] {
   grid-template-rows: 0fr;
-}
-
-.vue-collapse[data-state='collapsed'] {
-  visibility: hidden; /* inert */
 }
 </style>
