@@ -31,7 +31,6 @@ export default defineComponent({
     <button class="toggle" @click="isCollapsed1 = !isCollapsed1">
       {{ display1 }}
     </button>
-
     <section class="section">
       <Collapse
         :when="isCollapsed1"
@@ -53,8 +52,10 @@ export default defineComponent({
           passages, and more recently with desktop publishing software like
           Aldus PageMaker including versions of Lorem Ipsum.
         </p>
-        <button class="tooltip-hover">dummy button</button>
-        <p class="tooltip">tool tip</p>
+        <button class="tooltip-hover" @click="isCollapsed1 = !isCollapsed1">
+          dummy button
+        </button>
+        <p class="tooltip">Collapse?</p>
         <div class="spacer"></div>
       </Collapse>
     </section>
@@ -87,7 +88,7 @@ export default defineComponent({
           the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
           amet..", comes from a line in section 1.10.32.
         </p>
-        <button>dummy button</button>
+        <button @click="isCollapsed2 = !isCollapsed2">dummy button</button>
         <div class="spacer"></div>
       </Collapse>
     </section>
@@ -95,7 +96,6 @@ export default defineComponent({
     <button class="toggle" @click="isCollapsed3 = !isCollapsed3">
       {{ display3 }}
     </button>
-
     <section class="section">
       <Collapse
         :when="isCollapsed3"
@@ -115,7 +115,7 @@ export default defineComponent({
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <button>dummy button</button>
+        <button @click="isCollapsed3 = !isCollapsed3">dummy button</button>
         <div class="spacer"></div>
       </Collapse>
     </section>
@@ -123,7 +123,6 @@ export default defineComponent({
     <button class="toggle" @click="isCollapsed4 = !isCollapsed4">
       {{ display4 }}
     </button>
-
     <section class="section">
       <Collapse
         :when="isCollapsed4"
@@ -143,7 +142,7 @@ export default defineComponent({
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <button>dummy button</button>
+        <button @click="isCollapsed4 = !isCollapsed4">dummy button</button>
         <div class="spacer"></div>
       </Collapse>
     </section>
@@ -211,17 +210,15 @@ body {
 }
 
 .tooltip {
+  display: none;
   position: absolute;
   top: calc(100% - 8px);
   left: 0;
-  display: none;
-  min-width: 100px;
-  min-height: 100px;
   border: 1px solid;
   pointer-events: none;
   background-color: ghostwhite;
   z-index: 2;
-  padding: 4px;
+  padding: 16px;
 }
 
 .tooltip-hover:hover ~ .tooltip {
