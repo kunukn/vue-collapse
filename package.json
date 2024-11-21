@@ -1,13 +1,12 @@
 {
   "name": "@kunukn/vue-collapse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "kunukn",
   "license": "MIT",
   "description": "Collapsible library based on CSS transition for Vue",
   "type": "module",
   "files": [
     "dist/**/**",
-    "!dist/src",
     "docs/**/**",
     "!**/*.spec.*",
     "!**/*.tsbuildinfo",
