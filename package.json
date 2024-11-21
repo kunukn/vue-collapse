@@ -6,7 +6,13 @@
   "description": "Collapsible library based on CSS transition for Vue",
   "type": "module",
   "files": [
-    "dist"
+    "dist/**/**",
+    "!dist/src",
+    "docs/**/**",
+    "!**/*.spec.*",
+    "!**/*.tsbuildinfo",
+    "LICENSE",
+    "README.md"
   ],
   "main": "./dist/vue-collapse.umd.cjs",
   "module": "./dist/vue-collapse.js",
