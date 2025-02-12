@@ -67,13 +67,13 @@ onMounted(() => {
   state.value = value
   emit('init', value)
 
-  root.value.addEventListener(transitionstart, onStart)
-  root.value.addEventListener(transitionend, onEnd)
+  if (root.value) root.value.addEventListener(transitionstart, onStart)
+  if (root.value) root.value.addEventListener(transitionend, onEnd)
 })
 
 onBeforeUnmount(() => {
-  root.value.removeEventListener(transitionstart, onStart)
-  root.value.removeEventListener(transitionend, onEnd)
+  if (root.value) root.value.removeEventListener(transitionstart, onStart)
+  if (root.value) root.value.removeEventListener(transitionend, onEnd)
 })
 </script>
 
