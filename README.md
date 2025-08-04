@@ -169,6 +169,9 @@ You can use the library directly in the browser with ES modules and import maps:
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Import the CSS -->
     <link
       rel="stylesheet"
@@ -180,7 +183,7 @@ You can use the library directly in the browser with ES modules and import maps:
       {
         "imports": {
           "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
-          "@kunukn/vue-collapse": "https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.js"
+          "vue-collapse": "https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.js"
         }
       }
     </script>
@@ -190,7 +193,7 @@ You can use the library directly in the browser with ES modules and import maps:
 
     <script type="module">
       import { createApp, ref } from 'vue'
-      import { VueCollapse } from '@kunukn/vue-collapse'
+      import { VueCollapse } from 'vue-collapse'
 
       createApp({
         components: { VueCollapse },
