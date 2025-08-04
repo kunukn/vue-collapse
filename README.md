@@ -203,8 +203,11 @@ You can use the library directly in the browser with ES modules and import maps:
           <button @click="isCollapsed = !isCollapsed">
             {{ isCollapsed ? 'Expand' : 'Collapse' }}
           </button>
-          <VueCollapse :when="isCollapsed">
-            <p>This content can be collapsed!</p>
+          <VueCollapse :when="isCollapsed" transition="300ms ease-in-out">
+            <div>
+              <p>This content.</p>
+              <p>Can be collapsed!</p>
+            </div>
           </VueCollapse>
         </div>
       `,
