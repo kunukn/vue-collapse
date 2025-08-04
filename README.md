@@ -161,6 +161,59 @@ const onEvent = (state) => {
 
 https://unpkg.com/@kunukn/vue-collapse/
 
+## Using ESM with Import Maps
+
+You can use the library directly in the browser with ES modules and import maps:
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <!-- Import the CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.css"
+    />
+
+    <!-- Import map for dependencies -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+          "@kunukn/vue-collapse": "https://unpkg.com/@kunukn/vue-collapse/dist/vue-collapse.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import { createApp, ref } from 'vue'
+      import { VueCollapse } from '@kunukn/vue-collapse'
+
+      createApp({
+        components: { VueCollapse },
+        setup() {
+          const isCollapsed = ref(false)
+          return { isCollapsed }
+        },
+        template: `
+        <div>
+          <button @click="isCollapsed = !isCollapsed">
+            {{ isCollapsed ? 'Expand' : 'Collapse' }}
+          </button>
+          <VueCollapse :when="isCollapsed">
+            <p>This content can be collapsed!</p>
+          </VueCollapse>
+        </div>
+      `,
+      }).mount('#app')
+    </script>
+  </body>
+</html>
+```
+
 # Supported browsers
 
 Modern browsers that can CSS transition on `grid-template-rows`.
